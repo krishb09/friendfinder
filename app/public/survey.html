@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+  
+      <div class="jumbotron">
+        <h1 class="text-center"><span class="fa fa-fire"></span> Survey </h1>
+        <hr>
+        <h3>
+            </h3>
+            <h4>Name (Required)</h4>
+            <input type="text" id="name" class="form-control" required>
+    
+            <h4>Link to Photo Image (Required)</h4>
+            <input type="text" id="photo" class="form-control" required>
+            <hr>
+        <br>
+        <div class="text-center">
+          <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-12">
+  
+          <!-- Current Tables in Use -->
+          <div class="card">
+            <div class="card-header">
+              <h4>Italian is one of your favorite cuisines.</h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item1">
+                        <option value selected> Select an option </option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+              <!-- <ul id="tableList" class="list-group"></ul> -->
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>You go for the most spicy dishes! </h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item2">
+                            <option value selected> Select an option </option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+              <ul id="tableList" class="list-group"></ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>You prefer a more chill/low-key restaurant ambiance</h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item3">
+                            <option value selected> Select an option </option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+              <ul id="tableList" class="list-group"></ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>Money is not a factor when eating out!</h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item4">
+                            <option value selected> Select an option </option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+              <ul id="tableList" class="list-group"></ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>Nothing makes you more upset than waiting 45 mins - 1 hour for your food</h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item5">
+                            <option value selected> Select an option </option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+              <ul id="tableList" class="list-group"></ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>The less options on a menu, the better it is! </h4>
+            </div>
+            <div class="card-body">
+                    <select class="chosen-select" name= "choice" id="item6">
+                            <option value selected> Select an option </option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+              <ul id="tableList" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Submit Button -->
+          <button type="submit" class="submit btn btn-primary btn-lg btn-block" >
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                Submit</button>
+  
+      <footer class="footer mt-4">
+        <div class="container">
+          <p>Control Panel</p>
+          <p><a href="#" id="clear">Clear Table</a> | <a href="/api/food">API Food</a>
+        </div>
+      </footer>
+
+
+    </div>
+        <!-- Modal -->
+        <div id="results-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">
+                                <strong>Best Match</strong>
+                            </h2>
+                        </div>
+                        <div class="modal-body">
+                            <h2 id="match-name"></h2>
+                            <!-- <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+  </body>
+</html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+      //check if all fields are entered
+      function validate(){
+          var isValid = true; 
+          $(".chosen-select").each(function (){
+              if ($(this).val() === ""){
+                  isValid = false; 
+              }
+          }); 
+          return isValid; 
+      }
+  
+      // Here we grab the form elements
+      if (validate()){
+        var newEntry = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
+            scores:[
+                $("#item1").val().trim(),
+                $("#item2").val().trim(),
+                $("#item3").val().trim(),
+                $("#item4").val().trim(),
+                $("#item5").val().trim(),
+                $("#item16").val().trim(),
+            ]
+        };
+
+        $.post("/api/food", newEntry, function(data) {
+
+            //grab result from AJAX 
+            $("#match-name").text(data.name); 
+            $("match-img").attr("src", data.photo); 
+
+            //show modal
+             // Show the modal with the best match
+             $("#results-modal").modal("toggle");
+
+        });
+    }else{
+        alert("Fill out all fields before submitting!"); 
+    }
+    
+    }); 
+
+  
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+
+  
+  </script>
