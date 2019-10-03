@@ -42,25 +42,20 @@ module.exports = function(app) {
     var maxDiff = 24; 
 
     //loop through fooddata array
-    for(var i=0; i< foodData.length; i++){
-        var currDiff = 0 ; 
+    for(var i=0; i<foodData.length; i++){
+        var totalDiff = 0 ; 
         //go through each user in the fooddata and compare scores to each other
-        for( var j=0; j < foodData[i].length; j++){
+        for( var j=0; j <foodData[i].length; j++){
             //want to get absolute difference so no negative values
-            currDiff = Math.abs(parseInt(newUser.scores[j]) - foodData[i].scores[j]);
+            totalDiff += Math.abs(parseInt(newUser.scores[j]) - foodData[i].scores[j]);
         }
-        if( currDiff < maxDiff){
+        if(totalDiff < maxDiff){
             index = i; 
-            maxDiff = currDiff; //the max becomes new current diff so next time compare to that value 
+            maxDiff = totalDiff; //the max becomes new current diff so next time compare to that value 
         }
     }
     //push the data to the array
     foodData.push(newUser); 
     res.json(foodData[index]); //get that specific user(index) from the fooddata array 
-
   });
-
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
 };
