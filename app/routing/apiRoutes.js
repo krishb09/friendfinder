@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on food data
 // ===============================================================================
 
-var foodData = require("../data/food");
+var foodData = require("../data/food.js");
 
 // ===============================================================================
 // ROUTING
@@ -47,26 +47,20 @@ module.exports = function(app) {
         //go through each user in the fooddata and compare scores to each other
         for( var j=0; j < foodData[i].length; j++){
             //want to get absolute difference so no negative values
-            currDiff = Math.abs(parseInt(newUser.scores[j] - foodData[i].scores[j]));
+            currDiff = Math.abs(parseInt(newUser.scores[j]) - foodData[i].scores[j]);
         }
         if( currDiff < maxDiff){
             index = i; 
             maxDiff = currDiff; //the max becomes new current diff so next time compare to that value 
         }
     }
-    //push the data to the server
+    //push the data to the array
     foodData.push(newUser); 
-    res.json(foodData[i]); //get that specific user(index) from the fooddata array 
+    res.json(foodData[index]); //get that specific user(index) from the fooddata array 
 
   });
 
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
-
-  app.post("/api/clear", function(req, res) {
-    // Empty out the arrays of data
-    foodData.length = 0;
-    res.json({ ok: true });
-  });
 };

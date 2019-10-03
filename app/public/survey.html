@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Survey</title>
+  <title>Foodie Survey</title>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -147,7 +147,6 @@
   
       <footer class="footer mt-4">
         <div class="container">
-          <p>Control Panel</p>
           <p><a href="#" id="clear">Clear Table</a> | <a href="/api/food">API Food</a>
         </div>
       </footer>
@@ -161,9 +160,9 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                             <h2 class="modal-title">
-                                <strong>Best Match</strong>
+                                <strong>Best Match: </strong>
                             </h2>
                         </div>
                         <div class="modal-body">
@@ -201,7 +200,7 @@
           return isValid; 
       }
   
-      // Here we grab the form elements
+      // Grab elements by ID
       if (validate()){
         var newEntry = {
             name: $("#name").val(),
@@ -212,32 +211,23 @@
                 $("#item3").val().trim(),
                 $("#item4").val().trim(),
                 $("#item5").val().trim(),
-                $("#item16").val().trim(),
+                $("#item6").val().trim(),
             ]
         };
 
-        $.post("/api/food", newEntry, function(data) {
-
+        $.post("/api/food", newEntry, function(data) { //this is response of the server
             //grab result from AJAX 
             $("#match-name").text(data.name); 
             $("match-img").attr("src", data.photo); 
-
             //show modal
-             // Show the modal with the best match
              $("#results-modal").modal("toggle");
-
         });
     }else{
         alert("Fill out all fields before submitting!"); 
     }
-    
     }); 
-
-  
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
-
-  
   </script>

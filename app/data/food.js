@@ -5,9 +5,11 @@
 // But you could have it be an empty array as well.
 // ===============================================================================
 
+//first is italian
+//second is indian
 var resArray = [
     {
-        "name" : "Mama Mia", 
+        "name" : "Samantha", 
         "scores": [
             5, 
             1, 
@@ -18,7 +20,7 @@ var resArray = [
         ]
     }, 
     {
-        "name": "Curry House", 
+        "name": "Brett", 
         "scores": [
             1, 
             5, 
