@@ -17,6 +17,8 @@
       <div class="jumbotron">
         <h1 class="text-center"><span class="fa fa-fire"></span> Survey </h1>
         <hr>
+
+        <iframe style="display: block; margin: 0 auto"  src="https://giphy.com/embed/YxVDBOT7rK8YU" width="371" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pizza-get-me-YxVDBOT7rK8YU">via GIPHY</a></p>
         <h3>
             </h3>
             <h4>Name (Required)</h4>
@@ -130,14 +132,14 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Submit Button -->
       <button type="submit" class="submit btn btn-primary btn-lg btn-block" >
                 <i class="fa fa-check-circle" aria-hidden="true"></i>
                 Submit</button>
       <footer class="footer mt-4">
         <div class="container">
-          <p><a href="#" id="clear">Clear Table</a> | <a href="/api/food">API Food</a>
+          <p><a href="/api/food">API Food</a>
         </div>
       </footer>
 
@@ -192,16 +194,17 @@
             name: $("#name").val(),
             photo: $("#photo").val(),
             scores:[
-                $("#item1").val().trim(),
-                $("#item2").val().trim(),
-                $("#item3").val().trim(),
-                $("#item4").val().trim(),
-                $("#item5").val().trim(),
-                $("#item6").val().trim(),
+                parseInt($("#item1").val().trim()),
+                parseInt($("#item2").val().trim()),
+                parseInt($("#item3").val().trim()),
+                parseInt($("#item4").val().trim()),
+                parseInt($("#item5").val().trim()),
+                parseInt($("#item6").val().trim()),
             ]
         };
         //this is response of the server
         $.post("/api/food", newEntry, function(data) { 
+            console.log(typeof data.scores[0]); 
             //grab result from AJAX 
             $("#match-name").text(data.name); 
             $("match-img").attr("src", data.photo); 
