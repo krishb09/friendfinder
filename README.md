@@ -1,8 +1,21 @@
-Overview
+# Foodie Finder
 
-In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+A compatibility-based "FriendFinder" application but for foodies! 
 
-You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
+# Instructions
 
-https://cryptic-caverns-06639.herokuapp.com/ -- Deployed website 
+This full-stack site will take in results from users' surveys, then compare their answers with those from other users. The app will then display the name of the user with the best overall match. 
 
+# Languages/Technologies
+
+* HTML
+* Bootstrap
+* JavaScript
+* jQuery
+* Heroku
+
+# NPM Packages 
+* Express 
+
+# Deployed Link  
+https://cryptic-caverns-06639.herokuapp.com/ 
